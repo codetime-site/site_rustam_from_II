@@ -1,0 +1,167 @@
+// ============================================
+// Header Component
+// ============================================
+
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: $header-height
+  background: $header-bg
+  backdrop-filter: blur(10px)
+  box-shadow: $header-shadow
+  z-index: $zindex-fixed
+  transition: $transition-base
+  
+  &__inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: $header-height
+    gap: $spacing-lg
+  
+  &__logo
+    flex-shrink: 0
+  
+  &__nav
+    flex: 1
+    
+    +media-down($breakpoint-lg)
+      position: fixed
+      top: $header-height
+      left: 0
+      width: 100%
+      height: calc(100vh - $header-height)
+      background: $color-bg-dark
+      padding: $spacing-xl $container-padding
+      transform: translateX(-100%)
+      transition: transform 0.3s ease
+      overflow-y: auto
+      
+      &.active
+        transform: translateX(0)
+  
+  &__actions
+    display: flex
+    align-items: center
+    gap: $spacing-md
+    
+    +media-down($breakpoint-md)
+      display: none
+  
+  &__phone
+    color: $color-light
+    font-weight: $font-weight-semibold
+    font-size: $font-size-lg
+    text-decoration: none
+    transition: $transition-fast
+    
+    &:hover
+      color: $color-primary
+    
+    +media-down($breakpoint-lg)
+      display: none
+  
+  &__burger
+    display: none
+    flex-direction: column
+    justify-content: space-between
+    width: 30px
+    height: 24px
+    background: none
+    border: none
+    cursor: pointer
+    padding: 0
+    z-index: 10
+    
+    +media-down($breakpoint-lg)
+      display: flex
+    
+    span
+      display: block
+      width: 100%
+      height: 3px
+      background: $color-light
+      border-radius: 2px
+      transition: $transition-fast
+    
+    &.active
+      span:nth-child(1)
+        transform: translateY(10.5px) rotate(45deg)
+      
+      span:nth-child(2)
+        opacity: 0
+      
+      span:nth-child(3)
+        transform: translateY(-10.5px) rotate(-45deg)
+
+// Logo
+.logo
+  display: flex
+  flex-direction: column
+  text-decoration: none
+  line-height: 1
+  
+  &__text
+    font-size: 28px
+    font-weight: $font-weight-black
+    color: $color-primary
+    letter-spacing: 2px
+  
+  &__subtext
+    font-size: 12px
+    font-weight: $font-weight-medium
+    color: $color-light
+    letter-spacing: 3px
+    text-transform: uppercase
+    margin-top: 2px
+
+// Navigation Menu
+.nav-menu
+  reset-list()
+  display: flex
+  align-items: center
+  gap: $spacing-lg
+  
+  +media-down($breakpoint-lg)
+    flex-direction: column
+    align-items: flex-start
+    gap: $spacing-md
+  
+  &__item
+    position: relative
+  
+  &__link
+    color: $color-light
+    font-weight: $font-weight-medium
+    font-size: $font-size-base
+    text-decoration: none
+    padding: $spacing-xs 0
+    transition: $transition-fast
+    position: relative
+    
+    &::after
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 0
+      height: 2px
+      background: $color-primary
+      transition: width 0.3s ease
+    
+    &:hover
+      color: $color-primary
+      
+      &::after
+        width: 100%
+    
+    +media-down($breakpoint-lg)
+      font-size: $font-size-lg
+      padding: $spacing-sm 0
+
+// Sticky Header Animation
+.header.scrolled
+  background: rgba(10, 10, 10, 0.98)
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5)

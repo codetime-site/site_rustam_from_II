@@ -1,0 +1,155 @@
+// ============================================
+// About Component
+// ============================================
+
+.about
+  background: $color-bg
+  
+  &__content
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: $spacing-xxxl
+    align-items: center
+    
+    +media-down($breakpoint-lg)
+      grid-template-columns: 1fr
+      gap: $spacing-xl
+  
+  &__image
+    position: relative
+    border-radius: $border-radius-lg
+    overflow: hidden
+    box-shadow: $shadow-lg
+    
+    img
+      width: 100%
+      height: auto
+      display: block
+      transition: transform 0.5s ease
+    
+    &:hover img
+      transform: scale(1.05)
+  
+  &__badge
+    position: absolute
+    bottom: $spacing-lg
+    right: $spacing-lg
+    background: $color-primary
+    color: $color-light
+    padding: $spacing-md $spacing-lg
+    border-radius: $border-radius
+    text-align: center
+    box-shadow: $shadow-lg
+    
+    +media-down($breakpoint-sm)
+      bottom: $spacing-md
+      right: $spacing-md
+      padding: $spacing-sm $spacing-md
+  
+  &__badge-number
+    display: block
+    font-size: 2rem
+    font-weight: $font-weight-black
+    line-height: 1
+    
+    +media-down($breakpoint-sm)
+      font-size: 1.5rem
+  
+  &__badge-text
+    display: block
+    font-size: $font-size-sm
+    margin-top: $spacing-xs
+    opacity: 0.9
+  
+  &__text
+    +media-down($breakpoint-lg)
+      order: -1
+  
+  &__subtitle
+    font-size: $font-size-h3
+    font-weight: $font-weight-bold
+    color: $color-heading
+    margin-bottom: $spacing-lg
+    
+    +media-down($breakpoint-md)
+      font-size: $font-size-h4
+  
+  &__description
+    font-size: $font-size-base
+    color: $color-text-light
+    line-height: 1.8
+    margin-bottom: $spacing-md
+  
+  &__features
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: $spacing-lg
+    margin: $spacing-xl 0
+    
+    +media-down($breakpoint-md)
+      grid-template-columns: 1fr
+      gap: $spacing-md
+  
+  &__feature
+    display: flex
+    gap: $spacing-md
+    padding: $spacing-md
+    background: $color-bg-gray
+    border-radius: $border-radius
+    border-left: 3px solid $color-primary
+    transition: $transition-base
+    
+    &:hover
+      transform: translateX(5px)
+      box-shadow: $shadow
+  
+  &__feature-icon
+    flex-shrink: 0
+    width: 48px
+    height: 48px
+    display: flex
+    align-items: center
+    justify-content: center
+    background: $color-light
+    border-radius: $border-radius
+    color: $color-primary
+    
+    svg
+      width: 32px
+      height: 32px
+  
+  &__feature-content
+    flex: 1
+  
+  &__feature-title
+    font-size: $font-size-base
+    font-weight: $font-weight-semibold
+    color: $color-heading
+    margin-bottom: $spacing-xs
+  
+  &__feature-desc
+    font-size: $font-size-sm
+    color: $color-text-light
+    line-height: 1.5
+  
+  &__actions
+    display: flex
+    gap: $spacing-md
+    margin-top: $spacing-xl
+    
+    +media-down($breakpoint-sm)
+      flex-direction: column
+
+// Animation on scroll
+.about__content
+  > *
+    opacity: 0
+    
+    &.animated
+      opacity: 1
+
+.about__image.animated
+  slide-in-left(0.8s)
+
+.about__text.animated
+  slide-in-right(0.8s, 0.2s)

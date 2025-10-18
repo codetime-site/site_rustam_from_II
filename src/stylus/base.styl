@@ -1,0 +1,267 @@
+// ============================================
+// CNC Machining Services - Base Styles
+// ============================================
+
+// Import Variables and Mixins
+@import '_variables'
+@import '_mixins'
+
+// Reset & Base
+*
+*::before
+*::after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html
+  font-size: 16px
+  scroll-behavior: smooth
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+body
+  font-family: $font-family-base
+  font-size: $font-size-base
+  font-weight: $font-weight-normal
+  line-height: $line-height-base
+  color: $color-text
+  background-color: $color-bg
+  overflow-x: hidden
+
+// Typography
+h1, h2, h3, h4, h5, h6
+  font-family: $font-family-heading
+  font-weight: $font-weight-bold
+  line-height: $line-height-heading
+  color: $color-heading
+  margin-bottom: $spacing-md
+
+h1
+  font-size: $font-size-h1
+  +media-down($breakpoint-md)
+    font-size: $font-size-h2
+
+h2
+  font-size: $font-size-h2
+  +media-down($breakpoint-md)
+    font-size: $font-size-h3
+
+h3
+  font-size: $font-size-h3
+  +media-down($breakpoint-md)
+    font-size: $font-size-h4
+
+h4
+  font-size: $font-size-h4
+
+h5
+  font-size: $font-size-h5
+
+h6
+  font-size: $font-size-h6
+
+p
+  margin-bottom: $spacing-md
+
+a
+  color: $color-primary
+  text-decoration: none
+  transition: $transition-fast
+  
+  &:hover
+    color: $color-secondary
+    text-decoration: none
+
+img
+  max-width: 100%
+  height: auto
+  display: block
+
+// Container
+.container
+  container()
+
+// Section
+.section
+  padding: $spacing-xxxl 0
+  
+  +media-down($breakpoint-md)
+    padding: $spacing-xxl 0
+
+.section-title
+  font-size: $font-size-h2
+  font-weight: $font-weight-bold
+  text-align: center
+  margin-bottom: $spacing-xl
+  color: $color-heading
+  
+  &::after
+    content: ""
+    display: block
+    width: 60px
+    height: 3px
+    background: $color-primary
+    margin: $spacing-md auto 0
+
+// Buttons
+.btn
+  display: inline-block
+  padding: $btn-padding-y $btn-padding-x
+  font-size: $btn-font-size
+  font-weight: $font-weight-semibold
+  text-align: center
+  text-decoration: none
+  border: 2px solid transparent
+  border-radius: $btn-border-radius
+  cursor: pointer
+  transition: $transition-base
+  outline: none
+  
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: $shadow
+
+.btn-primary
+  background: $color-primary
+  color: $color-light
+  border-color: $color-primary
+  
+  &:hover
+    background: $color-secondary
+    border-color: $color-secondary
+    color: $color-light
+
+.btn-outline
+  background: transparent
+  color: $color-primary
+  border-color: $color-primary
+  
+  &:hover
+    background: $color-primary
+    color: $color-light
+
+.btn-light
+  background: $color-light
+  color: $color-dark
+  border-color: $color-light
+  
+  &:hover
+    background: transparent
+    color: $color-light
+    border-color: $color-light
+
+.btn-lg
+  padding: $btn-padding-y-lg $btn-padding-x-lg
+  font-size: $btn-font-size-lg
+
+.btn-sm
+  padding: $btn-padding-y-sm $btn-padding-x-sm
+  font-size: $btn-font-size-sm
+
+// Forms
+.form-group
+  margin-bottom: $spacing-md
+
+.form-label
+  display: block
+  margin-bottom: $spacing-xs
+  font-weight: $font-weight-medium
+  color: $color-heading
+
+.form-control
+  display: block
+  width: 100%
+  padding: $input-padding-y $input-padding-x
+  font-size: $input-font-size
+  font-family: $font-family-base
+  line-height: $line-height-base
+  color: $color-text
+  background-color: $color-bg
+  border: 1px solid $input-border-color
+  border-radius: $input-border-radius
+  transition: $transition-fast
+  outline: none
+  
+  &:focus
+    border-color: $input-focus-border-color
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.1)
+  
+  +placeholder()
+    color: $color-text-muted
+
+textarea.form-control
+  min-height: 120px
+  resize: vertical
+
+// Utilities
+.text-center
+  text-align: center
+
+.text-left
+  text-align: left
+
+.text-right
+  text-align: right
+
+.text-primary
+  color: $color-primary
+
+.text-white
+  color: $color-light
+
+.text-muted
+  color: $color-text-muted
+
+.bg-dark
+  background-color: $color-bg-dark
+
+.bg-light
+  background-color: $color-bg-gray
+
+.mt-0 { margin-top: 0 }
+.mt-1 { margin-top: $spacing-xs }
+.mt-2 { margin-top: $spacing-sm }
+.mt-3 { margin-top: $spacing-md }
+.mt-4 { margin-top: $spacing-lg }
+.mt-5 { margin-top: $spacing-xl }
+
+.mb-0 { margin-bottom: 0 }
+.mb-1 { margin-bottom: $spacing-xs }
+.mb-2 { margin-bottom: $spacing-sm }
+.mb-3 { margin-bottom: $spacing-md }
+.mb-4 { margin-bottom: $spacing-lg }
+.mb-5 { margin-bottom: $spacing-xl }
+
+.pt-0 { padding-top: 0 }
+.pt-1 { padding-top: $spacing-xs }
+.pt-2 { padding-top: $spacing-sm }
+.pt-3 { padding-top: $spacing-md }
+.pt-4 { padding-top: $spacing-lg }
+.pt-5 { padding-top: $spacing-xl }
+
+.pb-0 { padding-bottom: 0 }
+.pb-1 { padding-bottom: $spacing-xs }
+.pb-2 { padding-bottom: $spacing-sm }
+.pb-3 { padding-bottom: $spacing-md }
+.pb-4 { padding-bottom: $spacing-lg }
+.pb-5 { padding-bottom: $spacing-xl }
+
+// Animation Classes
+.animate-on-scroll
+  opacity: 0
+  
+  &.animated
+    opacity: 1
+
+.fade-in-up
+  &.animated
+    fade-in(0.6s)
+
+.slide-in-left
+  &.animated
+    slide-in-left(0.6s)
+
+.slide-in-right
+  &.animated
+    slide-in-right(0.6s)

@@ -1,0 +1,190 @@
+// ============================================
+// Equipment Component
+// ============================================
+
+.equipment
+  background: $color-bg-dark
+  color: $color-light
+  
+  .section-title
+    color: $color-light
+    
+    &::after
+      background: $color-primary
+  
+  &__grid
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: $spacing-xl
+    margin-bottom: $spacing-xxxl
+    
+    +media-down($breakpoint-lg)
+      grid-template-columns: repeat(2, 1fr)
+    
+    +media-down($breakpoint-md)
+      grid-template-columns: 1fr
+      gap: $spacing-lg
+  
+  &__card
+    background: rgba(255, 255, 255, 0.05)
+    border: 1px solid rgba(220, 0, 0, 0.2)
+    border-radius: $border-radius-lg
+    overflow: hidden
+    transition: $transition-base
+    
+    &:hover
+      transform: translateY(-10px)
+      border-color: $color-primary
+      box-shadow: 0 10px 30px rgba(220, 0, 0, 0.3)
+  
+  &__card-image
+    position: relative
+    aspect-ratio(16, 9)
+    overflow: hidden
+    
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      transition: transform 0.5s ease
+    
+    &:hover img
+      transform: scale(1.1)
+  
+  &__card-overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.8) 100%)
+    display: flex
+    align-items: flex-end
+    padding: $spacing-md
+  
+  &__card-badge
+    background: $color-primary
+    color: $color-light
+    padding: $spacing-xs $spacing-md
+    border-radius: $border-radius
+    font-size: $font-size-sm
+    font-weight: $font-weight-semibold
+  
+  &__card-content
+    padding: $spacing-lg
+  
+  &__card-title
+    font-size: $font-size-h4
+    font-weight: $font-weight-bold
+    color: $color-light
+    margin-bottom: $spacing-md
+  
+  &__card-specs
+    reset-list()
+    margin-bottom: $spacing-md
+    
+    li
+      position: relative
+      padding-left: $spacing-md
+      margin-bottom: $spacing-xs
+      font-size: $font-size-sm
+      color: $color-gray-lighter
+      
+      &::before
+        content: "▸"
+        position: absolute
+        left: 0
+        color: $color-primary
+  
+  &__card-desc
+    font-size: $font-size-sm
+    color: $color-gray-lighter
+    line-height: 1.6
+  
+  &__materials
+    background: rgba(255, 255, 255, 0.03)
+    border: 1px solid rgba(220, 0, 0, 0.2)
+    border-radius: $border-radius-lg
+    padding: $spacing-xl
+    margin-bottom: $spacing-xxxl
+    text-align: center
+  
+  &__materials-title
+    font-size: $font-size-h3
+    font-weight: $font-weight-bold
+    color: $color-light
+    margin-bottom: $spacing-xl
+  
+  &__materials-list
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    gap: $spacing-lg
+    
+    +media-down($breakpoint-lg)
+      grid-template-columns: repeat(3, 1fr)
+    
+    +media-down($breakpoint-sm)
+      grid-template-columns: repeat(2, 1fr)
+  
+  &__material
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: $spacing-sm
+    padding: $spacing-md
+    background: rgba(255, 255, 255, 0.05)
+    border-radius: $border-radius
+    transition: $transition-base
+    
+    &:hover
+      background: rgba(220, 0, 0, 0.1)
+      transform: translateY(-5px)
+  
+  &__material-icon
+    font-size: 2rem
+  
+  &__material-name
+    font-size: $font-size-sm
+    color: $color-gray-lighter
+    font-weight: $font-weight-medium
+  
+  &__cta
+    text-align: center
+    padding: $spacing-xxxl $spacing-xl
+    background: linear-gradient(135deg, rgba(220, 0, 0, 0.1) 0%, rgba(10, 10, 10, 0.5) 100%)
+    border-radius: $border-radius-lg
+    border: 1px solid rgba(220, 0, 0, 0.3)
+  
+  &__cta-title
+    font-size: $font-size-h2
+    font-weight: $font-weight-bold
+    color: $color-light
+    margin-bottom: $spacing-md
+    
+    +media-down($breakpoint-md)
+      font-size: $font-size-h3
+  
+  &__cta-text
+    font-size: $font-size-lg
+    color: $color-gray-lighter
+    margin-bottom: $spacing-xl
+    max-width: 600px
+    margin-left: auto
+    margin-right: auto
+    
+    +media-down($breakpoint-md)
+      font-size: $font-size-base
+
+// Animation on scroll
+.equipment__card
+  opacity: 0
+  
+  &.animated
+    opacity: 1
+    slide-up(0.6s)
+  
+  &:nth-child(2).animated
+    animation-delay: 0.2s
+  
+  &:nth-child(3).animated
+    animation-delay: 0.4s

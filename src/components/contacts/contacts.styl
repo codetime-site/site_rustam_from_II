@@ -1,0 +1,211 @@
+// ============================================
+// Contacts Component
+// ============================================
+
+.contacts
+  background: $color-bg
+  
+  &__content
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: $spacing-xxxl
+    
+    +media-down($breakpoint-lg)
+      grid-template-columns: 1fr
+      gap: $spacing-xl
+  
+  &__info
+    +media-down($breakpoint-lg)
+      order: 2
+  
+  &__subtitle
+    font-size: $font-size-h3
+    font-weight: $font-weight-bold
+    color: $color-heading
+    margin-bottom: $spacing-md
+  
+  &__description
+    font-size: $font-size-base
+    color: $color-text-light
+    line-height: 1.8
+    margin-bottom: $spacing-xl
+  
+  &__items
+    display: flex
+    flex-direction: column
+    gap: $spacing-lg
+  
+  &__item
+    display: flex
+    gap: $spacing-md
+    padding: $spacing-lg
+    background: $color-bg-gray
+    border-radius: $border-radius-lg
+    border-left: 4px solid $color-primary
+    transition: $transition-base
+    
+    &:hover
+      transform: translateX(5px)
+      box-shadow: $shadow
+  
+  &__item-icon
+    flex-shrink: 0
+    width: 56px
+    height: 56px
+    display: flex
+    align-items: center
+    justify-content: center
+    background: $color-light
+    border-radius: $border-radius
+    color: $color-primary
+    
+    svg
+      width: 32px
+      height: 32px
+  
+  &__item-content
+    flex: 1
+  
+  &__item-title
+    font-size: $font-size-base
+    font-weight: $font-weight-semibold
+    color: $color-heading
+    margin-bottom: $spacing-xs
+  
+  &__item-link
+    font-size: $font-size-lg
+    font-weight: $font-weight-medium
+    color: $color-primary
+    text-decoration: none
+    transition: $transition-fast
+    
+    &:hover
+      color: $color-secondary
+      text-decoration: underline
+  
+  &__item-text
+    font-size: $font-size-base
+    color: $color-text-light
+    line-height: 1.6
+  
+  &__form-wrapper
+    background: $color-bg-gray
+    padding: $spacing-xl
+    border-radius: $border-radius-lg
+    box-shadow: $shadow
+    
+    +media-down($breakpoint-lg)
+      order: 1
+  
+  &__form-title
+    font-size: $font-size-h3
+    font-weight: $font-weight-bold
+    color: $color-heading
+    margin-bottom: $spacing-xl
+    text-align: center
+  
+  &__form
+    .form-group
+      margin-bottom: $spacing-md
+    
+    .form-label
+      display: block
+      margin-bottom: $spacing-xs
+      font-weight: $font-weight-medium
+      color: $color-heading
+      font-size: $font-size-base
+    
+    .form-control
+      width: 100%
+      padding: $input-padding-y $input-padding-x
+      font-size: $input-font-size
+      font-family: $font-family-base
+      line-height: $line-height-base
+      color: $color-text
+      background-color: $color-bg
+      border: 2px solid $color-border
+      border-radius: $input-border-radius
+      transition: $transition-fast
+      outline: none
+      
+      &:focus
+        border-color: $color-primary
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.1)
+      
+      +placeholder()
+        color: $color-text-muted
+    
+    textarea.form-control
+      min-height: 120px
+      resize: vertical
+    
+    input[type="file"].form-control
+      padding: $spacing-sm
+      cursor: pointer
+    
+    .form-text
+      display: block
+      margin-top: $spacing-xs
+      font-size: $font-size-sm
+      color: $color-text-muted
+    
+    .form-checkbox
+      display: flex
+      align-items: flex-start
+      gap: $spacing-sm
+      cursor: pointer
+      
+      input[type="checkbox"]
+        margin-top: 4px
+        cursor: pointer
+      
+      span
+        font-size: $font-size-sm
+        color: $color-text-light
+        line-height: 1.5
+        
+        a
+          color: $color-primary
+          text-decoration: underline
+          
+          &:hover
+            color: $color-secondary
+    
+    .btn
+      width: 100%
+      margin-top: $spacing-md
+  
+  &__form-message
+    margin-top: $spacing-md
+    padding: $spacing-md
+    border-radius: $border-radius
+    font-size: $font-size-base
+    text-align: center
+    display: none
+    
+    &.success
+      display: block
+      background: rgba($color-success, 0.1)
+      color: $color-success
+      border: 1px solid $color-success
+    
+    &.error
+      display: block
+      background: rgba($color-danger, 0.1)
+      color: $color-danger
+      border: 1px solid $color-danger
+
+// Animation on scroll
+.contacts__info
+  opacity: 0
+  
+  &.animated
+    opacity: 1
+    slide-in-left(0.8s)
+
+.contacts__form-wrapper
+  opacity: 0
+  
+  &.animated
+    opacity: 1
+    slide-in-right(0.8s, 0.2s)

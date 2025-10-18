@@ -1,0 +1,179 @@
+// ============================================
+// Hero Component
+// ============================================
+
+.hero
+  position: relative
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: $spacing-xxxl 0
+  overflow: hidden
+  background: $color-bg-dark
+  
+  +media-down($breakpoint-md)
+    min-height: 80vh
+    padding: $spacing-xxl 0
+  
+  &__overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(220, 0, 0, 0.1) 100%)
+    z-index: 1
+  
+  &__background
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(220,0,0,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>')
+    opacity: 0.3
+    z-index: 0
+  
+  &__content
+    position: relative
+    z-index: 2
+    text-align: center
+    max-width: 900px
+    margin: 0 auto
+  
+  &__title
+    font-size: 3.5rem
+    font-weight: $font-weight-black
+    color: $color-light
+    margin-bottom: $spacing-lg
+    line-height: 1.2
+    fade-in(0.8s)
+    
+    +media-down($breakpoint-lg)
+      font-size: 2.5rem
+    
+    +media-down($breakpoint-md)
+      font-size: 2rem
+  
+  &__title-accent
+    color: $color-primary
+    display: block
+  
+  &__subtitle
+    font-size: $font-size-lg
+    color: $color-gray-lighter
+    margin-bottom: $spacing-xl
+    line-height: 1.6
+    fade-in(0.8s, 0.2s)
+    
+    +media-down($breakpoint-md)
+      font-size: $font-size-base
+  
+  &__actions
+    display: flex
+    gap: $spacing-md
+    justify-content: center
+    margin-bottom: $spacing-xxxl
+    fade-in(0.8s, 0.4s)
+    
+    +media-down($breakpoint-sm)
+      flex-direction: column
+      align-items: center
+  
+  &__features
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: $spacing-lg
+    margin-top: $spacing-xxxl
+    fade-in(0.8s, 0.6s)
+    
+    +media-down($breakpoint-md)
+      grid-template-columns: 1fr
+      gap: $spacing-md
+  
+  &__feature
+    display: flex
+    align-items: center
+    gap: $spacing-md
+    padding: $spacing-md
+    background: rgba(255, 255, 255, 0.05)
+    border: 1px solid rgba(220, 0, 0, 0.2)
+    border-radius: $border-radius-lg
+    transition: $transition-base
+    
+    &:hover
+      background: rgba(255, 255, 255, 0.08)
+      border-color: $color-primary
+      transform: translateY(-5px)
+    
+    +media-down($breakpoint-md)
+      justify-content: center
+  
+  &__feature-icon
+    flex-shrink: 0
+    width: 50px
+    height: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $color-primary
+    
+    svg
+      width: 100%
+      height: 100%
+  
+  &__feature-text
+    text-align: left
+    
+    +media-down($breakpoint-md)
+      text-align: center
+  
+  &__feature-title
+    font-size: $font-size-lg
+    font-weight: $font-weight-bold
+    color: $color-light
+    margin-bottom: $spacing-xs
+  
+  &__feature-desc
+    font-size: $font-size-sm
+    color: $color-gray-lighter
+  
+  &__scroll
+    position: absolute
+    bottom: $spacing-xl
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 2
+    
+    +media-down($breakpoint-md)
+      display: none
+  
+  &__scroll-link
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: $spacing-xs
+    color: $color-light
+    text-decoration: none
+    font-size: $font-size-sm
+    transition: $transition-fast
+    
+    &:hover
+      color: $color-primary
+      
+      svg
+        transform: translateY(5px)
+    
+    svg
+      transition: $transition-base
+
+// Parallax effect for background
+@keyframes float
+  0%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(-20px)
+
+.hero__background
+  animation: float 6s ease-in-out infinite

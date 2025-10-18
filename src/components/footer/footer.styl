@@ -1,0 +1,151 @@
+// ============================================
+// Footer Component
+// ============================================
+
+.footer
+  background: $footer-bg
+  color: $footer-color
+  padding: $footer-padding
+  
+  &__content
+    display: grid
+    grid-template-columns: 2fr 1fr 1fr 1.5fr
+    gap: $spacing-xl
+    padding-bottom: $spacing-xl
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+    
+    +media-down($breakpoint-lg)
+      grid-template-columns: repeat(2, 1fr)
+    
+    +media-down($breakpoint-md)
+      grid-template-columns: 1fr
+      gap: $spacing-lg
+  
+  &__column
+    &:first-child
+      +media-down($breakpoint-lg)
+        grid-column: 1 / -1
+  
+  &__logo
+    margin-bottom: $spacing-md
+    
+    .logo__text
+      color: $color-primary
+    
+    .logo__subtext
+      color: $color-light
+  
+  &__description
+    font-size: $font-size-sm
+    color: rgba(255, 255, 255, 0.7)
+    line-height: 1.6
+    margin-bottom: $spacing-md
+  
+  &__social
+    display: flex
+    gap: $spacing-sm
+  
+  &__social-link
+    width: 40px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    background: rgba(255, 255, 255, 0.1)
+    border-radius: $border-radius
+    color: $color-light
+    transition: $transition-base
+    
+    &:hover
+      background: $color-primary
+      transform: translateY(-3px)
+    
+    svg
+      width: 20px
+      height: 20px
+  
+  &__title
+    font-size: $font-size-lg
+    font-weight: $font-weight-bold
+    color: $color-light
+    margin-bottom: $spacing-md
+  
+  &__menu
+    reset-list()
+    
+    li
+      margin-bottom: $spacing-sm
+    
+    a
+      color: rgba(255, 255, 255, 0.7)
+      text-decoration: none
+      font-size: $font-size-base
+      transition: $transition-fast
+      display: inline-block
+      
+      &:hover
+        color: $color-primary
+        transform: translateX(5px)
+  
+  &__contacts
+    reset-list()
+    
+    li
+      margin-bottom: $spacing-md
+      font-size: $font-size-sm
+      color: rgba(255, 255, 255, 0.7)
+      line-height: 1.6
+      
+      strong
+        color: $color-light
+        display: block
+        margin-bottom: $spacing-xs
+      
+      a
+        color: $color-primary
+        text-decoration: none
+        transition: $transition-fast
+        
+        &:hover
+          color: $color-accent
+          text-decoration: underline
+  
+  &__bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: $spacing-lg
+    
+    +media-down($breakpoint-md)
+      flex-direction: column
+      gap: $spacing-md
+      text-align: center
+  
+  &__copyright
+    font-size: $font-size-sm
+    color: rgba(255, 255, 255, 0.6)
+  
+  &__links
+    display: flex
+    gap: $spacing-lg
+    
+    +media-down($breakpoint-md)
+      flex-direction: column
+      gap: $spacing-sm
+    
+    a
+      font-size: $font-size-sm
+      color: rgba(255, 255, 255, 0.6)
+      text-decoration: none
+      transition: $transition-fast
+      
+      &:hover
+        color: $color-primary
+
+// Animation on scroll
+.footer__content
+  opacity: 0
+  
+  &.animated
+    opacity: 1
+    fade-in(0.8s)

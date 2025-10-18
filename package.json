@@ -1,0 +1,41 @@
+{
+  "name": "cnc-machining-website",
+  "version": "1.0.0",
+  "description": "CNC Machining Services Website - Токарные и фрезерные работы с ЧПУ",
+  "main": "index.php",
+  "scripts": {
+    "dev": "gulp watch",
+    "build": "gulp build",
+    "stylus": "stylus src/stylus/main.styl -o assets/css/main.css",
+    "stylus:watch": "stylus -w src/stylus/main.styl -o assets/css/main.css",
+    "js:concat": "concat-cli -f src/js/animations.js src/js/slider.js src/js/main.js -o assets/js/main.js",
+    "js:minify": "terser assets/js/main.js -o assets/js/main.min.js --compress --mangle",
+    "css:minify": "cleancss -o assets/css/main.min.css assets/css/main.css"
+  },
+  "keywords": [
+    "cnc",
+    "machining",
+    "токарные работы",
+    "фрезерные работы",
+    "чпу"
+  ],
+  "author": "CNC Machining",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-stylus": "^2.7.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "del": "^6.1.1",
+    "browser-sync": "^2.29.3",
+    "stylus": "^0.59.0",
+    "concat-cli": "^4.0.0",
+    "terser": "^5.19.2",
+    "clean-css-cli": "^5.6.2"
+  }
+}

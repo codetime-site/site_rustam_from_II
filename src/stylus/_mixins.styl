@@ -1,0 +1,237 @@
+// ============================================
+// CNC Machining Services - Mixins
+// ============================================
+
+// Media Queries
+media-up($breakpoint)
+  @media (min-width: $breakpoint)
+    {block}
+
+media-down($breakpoint)
+  @media (max-width: ($breakpoint - 1px))
+    {block}
+
+media-between($min, $max)
+  @media (min-width: $min) and (max-width: ($max - 1px))
+    {block}
+
+// Container
+container()
+  width: 100%
+  max-width: $container-max-width
+  margin-left: auto
+  margin-right: auto
+  padding-left: $container-padding
+  padding-right: $container-padding
+
+// Clearfix
+clearfix()
+  &::after
+    content: ""
+    display: table
+    clear: both
+
+// Flexbox Center
+flex-center()
+  display: flex
+  align-items: center
+  justify-content: center
+
+// Absolute Center
+absolute-center()
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+// Reset List
+reset-list()
+  margin: 0
+  padding: 0
+  list-style: none
+
+// Button Reset
+button-reset()
+  padding: 0
+  border: none
+  background: none
+  cursor: pointer
+  font: inherit
+  color: inherit
+  outline: none
+
+// Link Reset
+link-reset()
+  color: inherit
+  text-decoration: none
+  &:hover
+    color: inherit
+    text-decoration: none
+
+// Transition
+transition($property = all, $duration = 0.3s, $timing = ease)
+  transition: $property $duration $timing
+
+// Box Shadow
+box-shadow($shadow = $shadow)
+  box-shadow: $shadow
+
+// Text Truncate
+text-truncate()
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+// Text Clamp (Multi-line)
+text-clamp($lines = 2)
+  display: -webkit-box
+  -webkit-line-clamp: $lines
+  -webkit-box-orient: vertical
+  overflow: hidden
+
+// Overlay
+overlay($color = rgba(0, 0, 0, 0.5))
+  position: relative
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: $color
+    z-index: 1
+
+// Gradient
+gradient($start, $end, $direction = to bottom)
+  background: linear-gradient($direction, $start, $end)
+
+// Fade In Animation
+fade-in($duration = 0.5s, $delay = 0s)
+  opacity: 0
+  animation: fadeIn $duration ease-in-out $delay forwards
+  
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+// Slide Up Animation
+slide-up($duration = 0.6s, $delay = 0s, $distance = 30px)
+  opacity: 0
+  transform: translateY($distance)
+  animation: slideUp $duration ease-out $delay forwards
+
+@keyframes slideUp
+  from
+    opacity: 0
+    transform: translateY(30px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+// Slide In From Left
+slide-in-left($duration = 0.6s, $delay = 0s, $distance = 30px)
+  opacity: 0
+  transform: translateX(-$distance)
+  animation: slideInLeft $duration ease-out $delay forwards
+
+@keyframes slideInLeft
+  from
+    opacity: 0
+    transform: translateX(-30px)
+  to
+    opacity: 1
+    transform: translateX(0)
+
+// Slide In From Right
+slide-in-right($duration = 0.6s, $delay = 0s, $distance = 30px)
+  opacity: 0
+  transform: translateX($distance)
+  animation: slideInRight $duration ease-out $delay forwards
+
+@keyframes slideInRight
+  from
+    opacity: 0
+    transform: translateX(30px)
+  to
+    opacity: 1
+    transform: translateX(0)
+
+// Scale In Animation
+scale-in($duration = 0.4s, $delay = 0s)
+  opacity: 0
+  transform: scale(0.9)
+  animation: scaleIn $duration ease-out $delay forwards
+
+@keyframes scaleIn
+  from
+    opacity: 0
+    transform: scale(0.9)
+  to
+    opacity: 1
+    transform: scale(1)
+
+// Hover Lift Effect
+hover-lift()
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: $shadow-lg
+
+// Hover Glow Effect
+hover-glow($color = $color-primary)
+  transition: box-shadow 0.3s ease
+  &:hover
+    box-shadow: 0 0 20px rgba($color, 0.5)
+
+// Aspect Ratio
+aspect-ratio($width, $height)
+  position: relative
+  &::before
+    content: ""
+    display: block
+    padding-top: ($height / $width) * 100%
+  > *
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+// Placeholder
+placeholder()
+  &::-webkit-input-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block}
+  &::placeholder
+    {block}
+
+// Scrollbar Custom
+scrollbar($width = 8px, $track-color = $color-bg-gray, $thumb-color = $color-gray-light)
+  &::-webkit-scrollbar
+    width: $width
+  &::-webkit-scrollbar-track
+    background: $track-color
+  &::-webkit-scrollbar-thumb
+    background: $thumb-color
+    border-radius: $border-radius
+    &:hover
+      background: darken($thumb-color, 10%)
+
+// Visually Hidden (Accessible)
+visually-hidden()
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  white-space: nowrap
+  border: 0
