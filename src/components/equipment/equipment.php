@@ -5,7 +5,7 @@
         <div class="equipment__grid">
             <div class="equipment__card">
                 <div class="equipment__card-image">
-                    <img src="assets/img/equipment-1.jpg" alt="Токарный станок с ЧПУ" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80" alt="Токарный станок с ЧПУ" loading="lazy">
                     <div class="equipment__card-overlay">
                         <span class="equipment__card-badge">Токарная обработка</span>
                     </div>
@@ -27,7 +27,7 @@
             
             <div class="equipment__card">
                 <div class="equipment__card-image">
-                    <img src="assets/img/equipment-2.jpg" alt="Фрезерный станок с ЧПУ" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80" alt="Фрезерный станок с ЧПУ" loading="lazy">
                     <div class="equipment__card-overlay">
                         <span class="equipment__card-badge">Фрезерная обработка</span>
                     </div>
@@ -49,7 +49,7 @@
             
             <div class="equipment__card">
                 <div class="equipment__card-image">
-                    <img src="assets/img/equipment-3.jpg" alt="Токарно-фрезерный центр" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80" alt="Токарно-фрезерный центр" loading="lazy">
                     <div class="equipment__card-overlay">
                         <span class="equipment__card-badge">Комплексная обработка</span>
                     </div>

@@ -5,7 +5,7 @@
         <div class="gallery__grid">
             <div class="gallery__item">
                 <div class="gallery__item-image">
-                    <img src="assets/img/product-1.jpg" alt="Деталь 1" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80" alt="Деталь 1" loading="lazy">
                     <div class="gallery__item-overlay">
                         <div class="gallery__item-content">
                             <h3 class="gallery__item-title">Вал приводной</h3>
@@ -21,7 +21,7 @@
             
             <div class="gallery__item">
                 <div class="gallery__item-image">
-                    <img src="assets/img/product-2.jpg" alt="Деталь 2" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Деталь 2" loading="lazy">
                     <div class="gallery__item-overlay">
                         <div class="gallery__item-content">
                             <h3 class="gallery__item-title">Корпус редуктора</h3>
@@ -37,7 +37,7 @@
             
             <div class="gallery__item">
                 <div class="gallery__item-image">
-                    <img src="assets/img/product-3.jpg" alt="Деталь 3" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="Деталь 3" loading="lazy">
                     <div class="gallery__item-overlay">
                         <div class="gallery__item-content">
                             <h3 class="gallery__item-title">Фланец соединительный</h3>
@@ -53,7 +53,7 @@
             
             <div class="gallery__item">
                 <div class="gallery__item-image">
-                    <img src="assets/img/product-4.jpg" alt="Деталь 4" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80" alt="Деталь 4" loading="lazy">
                     <div class="gallery__item-overlay">
                         <div class="gallery__item-content">
                             <h3 class="gallery__item-title">Втулка подшипника</h3>
@@ -69,7 +69,7 @@
             
             <div class="gallery__item">
                 <div class="gallery__item-image">
-                    <img src="assets/img/product-5.jpg" alt="Деталь 5" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800&q=80" alt="Деталь 5" loading="lazy">
                     <div class="gallery__item-overlay">
                         <div class="gallery__item-content">
                             <h3 class="gallery__item-title">Крышка механизма</h3>
@@ -85,7 +85,7 @@
             
             <div class="gallery__item">
                 <div class="gallery__item-image">
-                    <img src="assets/img/product-6.jpg" alt="Деталь 6" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80" alt="Деталь 6" loading="lazy">
                     <div class="gallery__item-overlay">
                         <div class="gallery__item-content">
                             <h3 class="gallery__item-title">Шестерня зубчатая</h3>

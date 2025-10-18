@@ -1,6 +1,6 @@
 <section class="hero" id="hero">
     <div class="hero__overlay"></div>
-    <div class="hero__background">
+    <div class="hero__background" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&q=80'); background-size: cover; background-position: center;">
         <!-- Background image or video can be added here -->
     </div>
     

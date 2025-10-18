@@ -4,7 +4,7 @@
         
         <div class="about__content">
             <div class="about__image">
-                <img src="assets/img/about-cnc.jpg" alt="CNC оборудование" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="CNC оборудование" loading="lazy">
                 <div class="about__badge">
                     <span class="about__badge-number">15+</span>
                     <span class="about__badge-text">лет опыта</span>
